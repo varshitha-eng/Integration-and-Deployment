@@ -19,14 +19,14 @@ pipeline {
                     mail to:"vvarshitha20@gmail.com",
                     subject:"Build Status Email",
                     body:"Build was successful!"
-                    attachLog:true
+                    attachLog: true
                     
                 }
                 failure {
                     mail to:"vvarshitha20@gmail.com",
                     subject:"Build Status Email",
                     body:"Build was successful!"
-                    attachLog:true
+                    attachLog: true
                 }
             }
         }
@@ -46,13 +46,13 @@ pipeline {
                     mail to:"vvarshitha20@gmail.com",
                     subject:"Build Status Email",
                     body:"Build was successful!"
-                    attachLog:true
+                    attachLog: true
                 }
                 failure {
                     mail to:"vvarshitha20@gmail.com",
                     subject:"Build Status Email",
                     body:"Build was successful!"
-                    attachLog:true 
+                    attachLog: true 
                 }
             }
         }
