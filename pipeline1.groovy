@@ -17,8 +17,8 @@ pipeline {
             post {
                 success {
                     mail to:"vvarshitha20@gmail.com",
-                    body:'Unit and Integration Tests Successful!',
-                    subject:'Unit & Integration Tests - Success!',
+                    subject:"Build Status Email",
+                    body:"Build was successful!"
                     attachLog:true
                     
                 }
