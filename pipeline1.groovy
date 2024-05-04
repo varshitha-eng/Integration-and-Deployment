@@ -23,7 +23,7 @@ pipeline {
                     
                 }
                 failure {
-                    body:'Unit and Integration Tests Failed!',
+                    mail to:"vvarshitha20@gmail.com",
                     subject:"Build Status Email",
                     body:"Build was successful!"
                     attachLog:true
@@ -43,13 +43,13 @@ pipeline {
             }
             post {
                 success {
-                    body:'Security Scan Successful!',
+                    mail to:"vvarshitha20@gmail.com",
                     subject:"Build Status Email",
                     body:"Build was successful!"
                     attachLog:true
                 }
                 failure {
-                    body:'Security Scan Failed!',
+                    mail to:"vvarshitha20@gmail.com",
                     subject:"Build Status Email",
                     body:"Build was successful!"
                     attachLog:true 
