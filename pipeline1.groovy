@@ -16,20 +16,20 @@ pipeline {
             }
             post {
                 success {
-                    emailify(
+                    
                         body: 'Unit and Integration Tests Successful!',
                         subject: 'Unit & Integration Tests - Success!',
                         recipient: 'vvarshitha20@gmail.com',
                         attachLog: true
-                    )
+                    
                 }
                 failure {
-                    emailify(
+                    
                         body: 'Unit and Integration Tests Failed!',
                         subject: 'Unit & Integration Tests - Failure!',
                         recipient: 'vvarshitha20@gmail.com',
                         attachLog: true
-                    )
+                    
                 }
             }
         }
@@ -46,20 +46,20 @@ pipeline {
             }
             post {
                 success {
-                    emailify(
+                    
                         body: 'Security Scan Successful!',
                         subject: 'Security Scan - Success!',
                         recipient: 'vvarshitha20@gmail.com',
                         attachLog: true
-                    )
+                    
                 }
                 failure {
-                    emailify(
+                    
                         body: 'Security Scan Failed!',
                         subject: 'Security Scan - Failure!',
                         recipient: 'vvarshitha20@gmail.com',
                         attachLog: true
-                    )
+                    
                 }
             }
         }
