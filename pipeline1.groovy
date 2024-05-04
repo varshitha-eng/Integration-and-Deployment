@@ -16,20 +16,17 @@ pipeline {
             }
             post {
                 success {
-                    
-                        body:'Unit and Integration Tests Successful!',
-                        subject:'Unit & Integration Tests - Success!',
-                        recipient:'vvarshitha20@gmail.com',
-                        attachLog:true
+                    mail to:"vvarshitha20@gmail.com",
+                    body:'Unit and Integration Tests Successful!',
+                    subject:'Unit & Integration Tests - Success!',
+                    attachLog:true
                     
                 }
                 failure {
-                    
-                        body:'Unit and Integration Tests Failed!',
-                        subject:'Unit & Integration Tests - Failure!',
-                        recipient:'vvarshitha20@gmail.com',
-                        attachLog:true
-                    
+                    body:'Unit and Integration Tests Failed!',
+                    subject:'Unit & Integration Tests - Failure!',
+                    recipient:'vvarshitha20@gmail.com',
+                    attachLog:true
                 }
             }
         }
@@ -46,20 +43,16 @@ pipeline {
             }
             post {
                 success {
-                    
-                        body:'Security Scan Successful!',
-                        subject:'Security Scan - Success!',
-                        recipient:'vvarshitha20@gmail.com',
-                        attachLog:true
-                    
+                    body:'Security Scan Successful!',
+                    subject:'Security Scan - Success!',
+                    recipient:'vvarshitha20@gmail.com',
+                    attachLog:true
                 }
                 failure {
-                    
-                        body:'Security Scan Failed!',
-                        subject:'Security Scan - Failure!',
-                        recipient:'vvarshitha20@gmail.com',
-                        attachLog:true
-                    
+                    body:'Security Scan Failed!',
+                    subject:'Security Scan - Failure!',
+                    recipient:'vvarshitha20@gmail.com',
+                    attachLog:true 
                 }
             }
         }
