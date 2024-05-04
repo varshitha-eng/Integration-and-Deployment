@@ -24,8 +24,8 @@ pipeline {
                 }
                 failure {
                     body:'Unit and Integration Tests Failed!',
-                    subject:'Unit & Integration Tests - Failure!',
-                    recipient:'vvarshitha20@gmail.com',
+                    subject:"Build Status Email",
+                    body:"Build was successful!"
                     attachLog:true
                 }
             }
@@ -44,14 +44,14 @@ pipeline {
             post {
                 success {
                     body:'Security Scan Successful!',
-                    subject:'Security Scan - Success!',
-                    recipient:'vvarshitha20@gmail.com',
+                    subject:"Build Status Email",
+                    body:"Build was successful!"
                     attachLog:true
                 }
                 failure {
                     body:'Security Scan Failed!',
-                    subject:'Security Scan - Failure!',
-                    recipient:'vvarshitha20@gmail.com',
+                    subject:"Build Status Email",
+                    body:"Build was successful!"
                     attachLog:true 
                 }
             }
