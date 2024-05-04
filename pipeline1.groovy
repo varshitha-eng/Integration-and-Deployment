@@ -16,16 +16,20 @@ pipeline {
             }
             post {
                 success {
-                    mail subject: 'Unit and Integration Tests Status',
-                        body: 'Unit and integration tests were successful!',
-                        to: 'vvarshitha20@gmail.com',
+                    emailext(
+                        to: "vvarshitha20@gmail.com",
+                        subject:"Unit and Integration Test Status",
+                        body:"Unit and Integration Tests are Successful!",
                         attachLog: true
+                    )
                 }
                 failure {
-                    mail subject: 'Unit and Integration Tests Status',
-                        body: 'Unit and integration tests failed!',
-                        to: 'vvarshitha20@gmail.com',
+                    emailext(
+                        to: "vvarshitha20@gmail.com",
+                        subject:"Unit and Integration Test Status",
+                        body:"Unit and Integration Tests are Failed!",
                         attachLog: true
+                    )
                 }
             }
         }
@@ -42,16 +46,20 @@ pipeline {
             }
             post {
                 success {
-                    mail subject: 'Security Scan Status',
-                        body: 'Security scan passed!',
-                        to: 'vvarshitha20@gmail.com',
+                    emailext(
+                        to: "vvarshitha20@gmail.com",
+                        subject:"Security Scan Status",
+                        body:"Security Scan is Successful!",
                         attachLog: true
+                    )
                 }
                 failure {
-                    mail subject: 'Security Scan Status',
-                        body: 'Security scan failed!',
-                        to: 'vvarshitha20@gmail.com',
-                        attachLog: true 
+                    emailext(
+                        to: "vvarshitha20@gmail.com",
+                        subject:"Security Scan Status",
+                        body:"Security Scan Failed!",
+                        attachLog: true
+                    )
                 }
             }
         }
