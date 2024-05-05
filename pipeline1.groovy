@@ -1,21 +1,22 @@
-pipeline {
-    agent any  // Run on any available Jenkins agent
+pipeline{
+    agent any
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building code using Gradle...' 
+    stages{
+        stage('Build'){
+            steps{
+                echo "Building the code using Gradle Tool, to compile and package the code"
             }
         }
-        stage('Unit and Integration Tests') {
-            steps {
-                echo 'Running unit tests with JUnit...' // Replace with your test command
-                // Example tool: JUnit, TestNG, etc.
-                echo 'Running integration tests with Selenium...'  // Replace with your command
-                // Example tool: Selenium, Cypress, etc.
+
+        stage('Unit and Integration Tests'){
+            steps{
+                echo "Unit tests are executed using TestNG tool to ensure code functions"
+
+                echo "Integration tests are executed using Cypress tool to ensure different components of the application work together"
             }
-            post {
-                success {
+
+            post{
+                success{
                     emailext(
                         to: "vvarshitha20@gmail.com",
                         subject:"Unit and Integration Test Status",
@@ -23,7 +24,8 @@ pipeline {
                         attachLog: true
                     )
                 }
-                failure {
+
+                failure{
                     emailext(
                         to: "vvarshitha20@gmail.com",
                         subject:"Unit and Integration Test Status",
@@ -33,17 +35,18 @@ pipeline {
                 }
             }
         }
-        stage('Code Analysis') {
-            steps {
-                echo 'Analyzing code with SonarQube...' // Replace with your command
-                // Example tool: SonarQube,  PMD, etc.
+
+        stage('Code Analysis'){
+            steps{
+                echo "SonarQube tool is used to analyse the code and ensure it meets industry standards"
             }
         }
-        stage('Security Scan') {
-            steps {
-                echo 'Scanning code for vulnerabilities with SAST scanner...' // Replace with your command
-                // Example tool: SAST scanner like OWASP ZAP, Snyk, etc.
+
+        stage('Security Scan'){
+            steps{
+                echo "Security scan on the code is performaed using OWSP ZAPtool to identify vulnerabilities"
             }
+
             post {
                 success {
                     emailext(
@@ -53,6 +56,7 @@ pipeline {
                         attachLog: true
                     )
                 }
+
                 failure {
                     emailext(
                         to: "vvarshitha20@gmail.com",
@@ -63,20 +67,22 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to Staging') {
-            steps {
-                echo 'Deploying application to staging server (e.g., AWS EC2)...' // Replace with your deployment command
+
+        stage('Deploy to Staging'){
+            steps{
+                echo "AWS EC2 instance is used to deploy the application to a staging server"
             }
         }
-        stage('Integration Tests on Staging') {
-            steps {
-                echo 'Running integration tests on staging environment...' // Replace with your command
+
+        stage('Integration Tests on Staging'){
+            steps{
+                echo "Selenium tool is used for integration tests on the staging environment to ensure application functions"
             }
         }
-        stage('Deploy to Production') {
-            steps {
-                echo 'Deploying application to production server (e.g., AWS EC2)...' // Replace with your command
+
+        stage('Deploy to Production'){
+            steps{
+                echo "AWS EC2 instance is used to deploy the application to a production server"
             }
         }
     }
-}
