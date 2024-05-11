@@ -78,7 +78,7 @@ pipeline{
             steps{
                 echo "Selenium tool is used for integration tests on the staging environment to ensure application functions"
             }
-        } // staging
+        } 
 
         stage('Deploy to Production'){
             steps{
