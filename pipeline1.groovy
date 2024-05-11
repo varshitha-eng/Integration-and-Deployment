@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo "Gradle Tool, to compile and package the code"
+                echo "Gradle Tool is used for compiling and package the code"
             }
         }
 
