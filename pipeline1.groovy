@@ -44,7 +44,7 @@ pipeline{
 
         stage('Security Scan'){
             steps{
-                echo "Security scan on the code is performaed using OWSP ZAPtool to identify vulnerabilities"
+                echo "Security scan on the code is performaed using OWSP ZAP tool to identify vulnerabilities"
             }
 
             post {
